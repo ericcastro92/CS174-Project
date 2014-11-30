@@ -38,6 +38,20 @@
 			print 'Password must have at least 1 number<br>';
 			$validform = false;
 		}
+
+		if(strcmp($pass, $repass) != 0){
+			print 'Passwords did not match<br>';
+			$validform = false;
+		}
+
+		//Insert login data to table if all criteria are met
+		if($validform){
+			$query = "INSERT into users (email, password) values ('$email','$pass')";
+			mysqli_query($conn, $query);
+
+			print "You have successfully been registered<br>";
+			print "Click <a href='login.php'>here</a> to login.<br>";
+		}
 	}
 ?>
 <html>
@@ -50,6 +64,9 @@
 		<h1>
 			Register
 		</h1>
+		<h2>
+			<a href="index.html">Home</a> | <a href="login.php">Login</a>
+		</h2>
 		<form method="post" action="">
 			<input type="text" name="email" placeholder="Email" size="30"/>
 			</br>
