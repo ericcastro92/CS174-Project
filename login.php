@@ -35,8 +35,17 @@
 			/**
 			Do any cookie or session things here
 			*/
+				if(isset($_POST['saveinfo']))
+			{
+				setcookie('email', $_POST['email'], time()+60);
+				setcookie('password', $_POST['password']), time()+60);
+			}
+			
 			print "You have successfully been logged in.<br>";
 			print "Click <a href='index.html'>here</a> to go home.</a><br>";
+		
+			
+			
 		}
 	}
 ?>
@@ -54,10 +63,11 @@
 			<a href="index.html">Home</a> | <a href="register.php">Register</a>
 		</h2>
 		<form method="post" action="">
-			<input type="text" name="email" placeholder="Email" size="30"/>
+			<input type="text" name="email" placeholder="<?php echo $_COOKIE['email']?> " size="30"/>
 			</br>
-			<input type="password" name="password" placeholder="Password" size="30"/>
+			<input type="password" name="password" placeholder="<?php echo $_COOKIE['password']?> " size="30"/>
 			</br>
+			<input type="checkbox" name="userlogin" value="saveinfo"> Stay logged in <br>
 			<input type="submit" value="Login"/>
 		</form>
 	</body>
