@@ -6,15 +6,7 @@
 		$pass = $_POST['password'];
 		$repass = $_POST['repassword'];
 
-		/**
-		DEBUG: REMOVE WHEN DONE
-		print $email."<br>";
-		print $pass."<br>";
-		print $email."<br>";
-		*/
-
 		$validform = true;
-
 		//Check for empty strings
 		if(empty($email) || empty($pass) || empty($repass))
 		{
