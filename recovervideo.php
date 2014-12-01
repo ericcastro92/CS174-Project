@@ -10,12 +10,12 @@
     <?php
     	include("dbconnect.php");
 	 ?>
-        <h2>You wish to modify the information on
+        <h3> <b>You are currently editing: </b> 
         <?php
 			$to_be_recovered_name=$_POST['to_be_recovered_name'];
-			print  "name as: $to_be_recovered_name";
+			print  "<i>$to_be_recovered_name</i>";
 		?>
-		</h2>
+		</h3>
         <?php
         
         $result = mysqli_query($conn, "select * from fun_video where title ='$to_be_recovered_name'");
@@ -62,8 +62,8 @@
          <p>
          	<label for = language>Language: </label>
             <select id = language name = language>
-            	<option value = english>English</option>
-                <option value = nonenglish>Non-English</option>
+            	<option value = English>English</option>
+                <option value = Non-English>Non-English</option>
             </select>
          </p>
          
@@ -92,8 +92,8 @@
             <input type = text name = tag value = $tag />
          </p>
 		
-        <input type=hidden size=40 name='title' value='$title'>
-        <input type=submit name=submit value='Modify accordingly now!'>
+        <input type=hidden name='name_entered' value='$to_be_recovered_name'/>
+        <input type=submit name=submit value='Confirm Changes'>
         <input type=reset name=reset value='Start Over'>
         
         </form>";
@@ -110,6 +110,6 @@
      <input type='button' value='Go back'
                           onclick='self.history.back()' />
 
-    <h2><a href="view.php">View Video Website</a></h2>
+    <h2><a href="view.php">Go to Video Website</a></h2>
 </body>
 </html>
