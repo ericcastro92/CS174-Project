@@ -9,14 +9,14 @@
     	include("dbconnect.php");
     ?>
     
-    <h2>Modify my Guest Book!!!</h2>
-    Enter the name of the guest you wish to modify
+    <h1>Modify Videos</h1>
+    <h2>Step 1: Enter a video title.</h2>
+
     <form method=post action="verify_input.php">
-    
-    <b>Name:</b>
+
     <input type=text size=40 name=to_be_recovered_name>
-    <br>
-    <input type=submit name=submit value="Recover that guest info!">
+    </br></br>
+    <input type=submit name=submit value="Edit Video">
     <input type=reset name=reset value="Start Over">
     
     </form>
