@@ -5,12 +5,6 @@
 		$email = $_POST['email'];
 		$pass = $_POST['password'];
 
-		/**
-		DEBUG: REMOVE WHEN DONE
-		print $email."<br>";
-		print $pass."<br>";
-		*/
-
 		$validform = true;
 
 		//Get email and password from database
@@ -32,17 +26,15 @@
 
 		//Insert login data to table if all criteria are met
 		if($validform){	
-			/**
-			Do any cookie or session things here
-			*/
-
 			session_start();
 			$_SESSION['email']=$_POST['email'];
 			$_SESSION['password']=$_POST['password'];
+
 			if(isset($_POST['saveinfo']))
 			{
 				setcookie('email', $_POST['email'], time()+60);
-				setcookie('password', $_POST['password']), time()+60);
+				setcookie('password', $_POST['password'], time()+60);
+				setcookie('loggedIn', 1, time()+60);
 			}
 			
 			print "You have successfully been logged in.<br>";
@@ -66,13 +58,21 @@
 		<h2>
 			<a href="index.html">Home</a> | <a href="register.php">Register</a>
 		</h2>
-		<form method="post" action="">
-			<input type="text" name="email" placeholder="<?php echo $_COOKIE['email']?> " size="30"/>
-			</br>
-			<input type="password" name="password" placeholder="<?php echo $_COOKIE['password']?> " size="30"/>
-			</br>
-			<input type="checkbox" name="userlogin" value="saveinfo"> Stay logged in <br>
-			<input type="submit" value="Login"/>
-		</form>
+	<?php
+		if(isset($_COOKIE['loggedIn']) && strcmp($_COOKIE['loggedIn'],1)==0){
+			print'<form method="post" action="">
+				<input type="text" name="email" placeholder="Email" size="30"/>
+				</br>
+				<input type="password" name="password" placeholder="Password" size="30"/>
+				</br>
+				<input type="checkbox" name="userlogin" value="saveinfo"> Stay logged in 
+				<br>
+				<input type="submit" value="Login"/>
+			</form>';
+		}
+		else
+			print'<p> You are already logged in. </p>';
+
+	?>
 	</body>
 </html>
