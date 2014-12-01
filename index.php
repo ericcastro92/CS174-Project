@@ -16,6 +16,7 @@
 		 	<param name="autoplay" value="true">
 			<param name="loop" value="false">
 		</object>
-
+		
+		<?php echo $_SESSION['favorites']; ?>
 	</body>
 </html>

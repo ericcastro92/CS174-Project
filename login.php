@@ -27,7 +27,6 @@
 
 		//Insert login data to table if all criteria are met
 		if($validform){	
-			session_start();
 			//$_SESSION['email']=$_POST['email'];
 			//$_SESSION['password']=$_POST['password'];
 			$successfulLogin = true;
