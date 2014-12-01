@@ -1,5 +1,6 @@
 <?php
 	include 'dbconnect.php';
+	$successfulLogin = false;
 	if (strtoupper($_SERVER['REQUEST_METHOD']) == 'POST')
 	{
 		$email = $_POST['email'];
@@ -29,9 +30,16 @@
 			session_start();
 			$_SESSION['email']=$_POST['email'];
 			$_SESSION['password']=$_POST['password'];
+			$successfulLogin = true;
 
-			if(isset($_POST['saveinfo']))
+			if(isset($_POST['keepLogin']))
 			{
+				//Keeps user logged in for 5 minutes
+				setcookie('email', $_POST['email'], time()+60*5);
+				setcookie('password', $_POST['password'], time()+60*5);
+				setcookie('loggedIn', 1, time()+60*5);
+			}
+			else{
 				setcookie('email', $_POST['email'], time()+60);
 				setcookie('password', $_POST['password'], time()+60);
 				setcookie('loggedIn', 1, time()+60);
@@ -59,20 +67,20 @@
 			<a href="index.html">Home</a> | <a href="register.php">Register</a>
 		</h2>
 	<?php
-		if(isset($_COOKIE['loggedIn']) && strcmp($_COOKIE['loggedIn'],1)==0){
+		if($successfulLogin == false && (!isset($_COOKIE['loggedIn']) || !strcmp($_COOKIE['loggedIn'],1)==0)){
 			print'<form method="post" action="">
 				<input type="text" name="email" placeholder="Email" size="30"/>
 				</br>
 				<input type="password" name="password" placeholder="Password" size="30"/>
 				</br>
-				<input type="checkbox" name="userlogin" value="saveinfo"> Stay logged in 
+				<input type="checkbox" name="keepLogin"> Stay logged in 
 				<br>
 				<input type="submit" value="Login"/>
 			</form>';
 		}
-		else
+		else{
 			print'<p> You are already logged in. </p>';
-
+		}
 	?>
 	</body>
 </html>
