@@ -56,7 +56,7 @@
          
          <p>
          	<label for description> Video Description: </label>
-            <textarea id=description name=description cols=40 rows=4 class=field-large value=$description></textarea>
+            <textarea id=description name=description cols=40 rows=4 >$description</textarea>
          </p>
          
          <p>
@@ -84,7 +84,7 @@
          
 		 <p>
          	<label for = iconimage>Image Link: </label>
-            <input type = text name = iconimage value = #iconimage />
+            <input type = text name = iconimage value = $iconimage />
          </p>
          
 		 <p>
@@ -109,7 +109,7 @@
     ?>
      <input type='button' value='Go back'
                           onclick='self.history.back()' />
-    <h2><a href="modify.php">Modify My Guest Book!!</a></h2>
-    <h2><a href="sign.php">Sign My Guest Book!!</a></h2>
+
+    <h2><a href="view.php">View Video Website</a></h2>
 </body>
 </html>
