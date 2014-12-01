@@ -35,6 +35,9 @@
 			/**
 			Do any cookie or session things here
 			*/
+			session_start();
+			$_SESSION['email']=$_POST['email'];
+			$_SESSION['password']=$_POST['password'];
 				if(isset($_POST['saveinfo']))
 			{
 				setcookie('email', $_POST['email'], time()+60);
