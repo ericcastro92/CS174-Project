@@ -6,7 +6,8 @@
 </head>
 
 <body>
-
+<h1>Modify Video</h1>
+<h2>Step 2 : Edit Video Parameters </h2>
 	<?php
     include_once("dbconnect.php");
     //In case the register_globals is turned off, the form parameters can still be recovered as follows.
