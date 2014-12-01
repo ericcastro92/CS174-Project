@@ -32,17 +32,13 @@
 			$_SESSION['password']=$_POST['password'];
 			$successfulLogin = true;
 
+			setcookie('loggedIn', 1, time()+30);
+
 			if(isset($_POST['keepLogin']))
 			{
 				//Keeps user logged in for 5 minutes
-				setcookie('email', $_POST['email'], time()+60*5);
-				setcookie('password', $_POST['password'], time()+60*5);
-				setcookie('loggedIn', 1, time()+60*5);
-			}
-			else{
 				setcookie('email', $_POST['email'], time()+60);
 				setcookie('password', $_POST['password'], time()+60);
-				setcookie('loggedIn', 1, time()+60);
 			}
 			
 			print "You have successfully been logged in.<br>";
@@ -68,14 +64,18 @@
 		</h2>
 	<?php
 		if($successfulLogin == false && (!isset($_COOKIE['loggedIn']) || !strcmp($_COOKIE['loggedIn'],1)==0)){
-			print'<form method="post" action="">
-				<input type="text" name="email" placeholder="Email" size="30"/>
-				</br>
-				<input type="password" name="password" placeholder="Password" size="30"/>
-				</br>
-				<input type="checkbox" name="keepLogin"> Stay logged in 
-				<br>
-				<input type="submit" value="Login"/>
+			
+		print'<form method="post" action="">';
+			if(isset($_COOKIE['email']) && isset($_COOKIE['password'])){
+				print "<input type='text' name='email' placeholder='Email' size='30' value='{$_COOKIE['email']}'/> </br>";
+				print "<input type='password' name='password' placeholder='Password' size='30' value='{$_COOKIE['password']}'/></br>";
+			}
+			else{
+				print '<input type="text" name="email" placeholder="Email" size="30"/></br>';
+				print '<input type="password" name="password" placeholder="Password" size="30"/></br>';	
+			}
+		print'<input type="checkbox" name="keepLogin"> Remember Me <br>
+			<input type="submit" value="Login"/>
 			</form>';
 		}
 		else{
