@@ -1,4 +1,5 @@
 <html>
+	<?php require_once('config.php'); ?>
 	<header>
 		<title>
 			CS174 - Group 1 - Home
@@ -16,10 +17,5 @@
 			<param name="loop" value="false">
 		</object>
 
-		</div>
-		<a href="upload.php">Upload Videos</a> |
-		<a href="view.php">Go to Video Website</a> |
-		<a href="register.php">Register</a> |
-		<a href="login.php">Login</a>
 	</body>
 </html>

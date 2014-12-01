@@ -1,5 +1,5 @@
 <?php
-	include 'dbconnect.php';
+	require_once('config.php');
 	$successfulLogin = false;
 	if (strtoupper($_SERVER['REQUEST_METHOD']) == 'POST')
 	{
@@ -28,11 +28,11 @@
 		//Insert login data to table if all criteria are met
 		if($validform){	
 			session_start();
-			$_SESSION['email']=$_POST['email'];
-			$_SESSION['password']=$_POST['password'];
+			//$_SESSION['email']=$_POST['email'];
+			//$_SESSION['password']=$_POST['password'];
 			$successfulLogin = true;
 
-			setcookie('loggedIn', 1, time()+30);
+			setcookie('loggedIn', $_POST['email'], time()+30);
 
 			if(isset($_POST['keepLogin']))
 			{
@@ -59,9 +59,7 @@
 		<h1>
 			Login
 		</h1>
-		<h2>
-			<a href="index.html">Home</a> | <a href="register.php">Register</a>
-		</h2>
+		
 	<?php
 		if($successfulLogin == false && (!isset($_COOKIE['loggedIn']) || !strcmp($_COOKIE['loggedIn'],1)==0)){
 			

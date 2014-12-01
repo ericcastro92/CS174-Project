@@ -1,5 +1,5 @@
 <?php
-	include 'dbconnect.php';
+	require_once('config.php');
 	if (strtoupper($_SERVER['REQUEST_METHOD']) == 'POST')
 	{
 		$email = $_POST['email'];
@@ -56,9 +56,6 @@
 		<h1>
 			Register
 		</h1>
-		<h2>
-			<a href="index.html">Home</a> | <a href="login.php">Login</a>
-		</h2>
 		<form method="post" action="">
 			<input type="text" name="email" placeholder="Email" size="30"/>
 			</br>
