@@ -5,14 +5,13 @@
 <title>Update Video</title>
 </head>
 <body>
+<h1>Modify Video</h1>
 	<?php
 		//In case the register_globals is turned off, the form parameters can still be recovered as follows.
 		$title= $_POST['title'];
 		$videolink= $_POST['videolink'];
 		$videolength= $_POST['videolength'];
-		$videolength = round($videolength,-2);
 		$highestresolution= $_POST['highestresolution'];
-		echo "$videolength";
 		$description= $_POST['description'];
 		$description = addslashes($description);
 		$language = $_POST['language'];
@@ -23,15 +22,16 @@
 		$name_entered = $_POST['name_entered'];
 		include("dbconnect.php");
 				$query = "update fun_video "
-						." set  title ='$title',videolink='$videolink',highestresolution='$highestresolution',"
+						." set  title ='$title',videolink='$videolink', videolength='$videolength',"
+						." highestresolution='$highestresolution',"
 						." description='$description', language='$language', viewcount='$viewcount',"
-						." iconimage='$iconimage', tag='$tag', videotype = '$videotype' "
-						." where name = '$name_entered'"
+						." videotype = '$videotype', iconimage='$iconimage', tag='$tag' "
+						." where title = '$name_entered'"
 				;
 				mysqli_query($conn, $query);
     ?>
-    <h2>Thanks!!</h2>
-    <h2><a href="view.php">View My Guest Book!!!</a></h2>
+    <h2>Changes have been made. Click 
+    <a href="view.php">here</a> to view updated website.</h2>
 
 </body>
 </html>
