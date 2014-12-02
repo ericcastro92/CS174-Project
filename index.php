@@ -17,6 +17,12 @@
 			<param name="loop" value="false">
 		</object>
 		
-		<?php echo $_SESSION['favorites']; ?>
+
+		<?php
+			if(isset($_SESSION['favorites'])) 
+				echo $_SESSION['favorites']; 
+			else
+				echo "No favorited videos";
+		?>
 	</body>
 </html>
