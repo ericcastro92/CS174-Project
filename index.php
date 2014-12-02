@@ -16,11 +16,17 @@
 		 	<param name="autoplay" value="true">
 			<param name="loop" value="false">
 		</object>
-		
-
 		<?php
-			if(isset($_SESSION['favorites'])) 
-				echo $_SESSION['favorites']; 
+			echo "<h2>Favorites</h2>";
+			if(isset($_SESSION['favorites']))
+			{ 
+				$favs = explode(" ", $_SESSION['favorites']);
+				foreach($favs as $favorite){
+					$data = mysqli_query($conn, "SELECT * FROM fun_video WHERE id = '$favorite'");
+					list($id, $title, $videolink, $videolength, $highestres, $description, $lang, $viewcount, $vidtype, $iconimage, $tag) = mysqli_fetch_array($data);
+					echo "<a href = '$videolink'> $title </a></br>";
+				}
+			}
 			else
 				echo "No favorited videos";
 		?>
