@@ -9,7 +9,7 @@
 	include "dbconnect.php";
 
 	$sessionId = session_id();
-	if(empty($a)) session_start();
+	if(empty($sessionId)) session_start();
 		
 
 	/*function open($path, $name) {

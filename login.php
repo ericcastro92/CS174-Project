@@ -53,8 +53,6 @@
 			print "Click <a href='index.php'>here</a> to go home.</a><br>";
 			header( 'Location: index.php' ) ;
 		}
-		else
-			include "navbar.php";
 	}
 	else
 		include "navbar.php";
