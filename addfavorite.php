@@ -7,13 +7,18 @@ if ($_POST)
 
 	if (isset($_SESSION['favorites'])) {
 		$fav = $_SESSION['favorites'];
-		$_SESSION['favorites'] = $fav . " " . $videoid;
+
+		$array = explode(" ", $_SESSION['favorites']);
+
+		if (!in_array($videoid, $array))
+		{
+			$_SESSION['favorites'] = $fav . " " . $videoid;
+		}
+
 	}
 	else {
 		$_SESSION['favorites'] = $videoid;
 	}
-	
-	echo $_SESSION['favorites'];
 }
 
 ?>

@@ -1,10 +1,18 @@
 <?php
 	require_once('config.php');
 	$successfulLogin = false;
+
+	// Check if logged in
+	if (isset($_COOKIE["loggedIn"])) {
+		// Reroute to index.php
+		header( 'Location: index.php' ) ;
+	}
+
 	if (strtoupper($_SERVER['REQUEST_METHOD']) == 'POST')
 	{
 		$email = $_POST['email'];
 		$pass = $_POST['password'];
+
 
 		$validform = true;
 
@@ -31,7 +39,7 @@
 			//$_SESSION['password']=$_POST['password'];
 			$successfulLogin = true;
 
-			setcookie('loggedIn', $_POST['email'], time()+30);
+			setcookie('loggedIn', $_POST['email'], time()+60);
 
 			if(isset($_POST['keepLogin']))
 			{
@@ -42,11 +50,10 @@
 			
 			print "You have successfully been logged in.<br>";
 			print "Click <a href='index.php'>here</a> to go home.</a><br>";
-		
-			
-			
+			header( 'Location: index.php' ) ;
 		}
 	}
+
 ?>
 <html>
 	<header>
