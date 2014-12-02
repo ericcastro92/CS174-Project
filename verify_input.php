@@ -14,7 +14,7 @@
     $to_be_recovered_name = $_POST['to_be_recovered_name'];
     if (empty($to_be_recovered_name))
     {
-      print "<h2>You have not entered the guest name</h2>";
+      print "<h2>There is no video matching what you entered.</h2>";
       print "<h2><a href='modify.php'>Modify Video!</a></h2>";
     }
     else
