@@ -1,5 +1,5 @@
 <?php
-	require_once('config.php');
+	include "dbconnect.php";
 	$successfulLogin = false;
 
 	// Check if logged in
@@ -7,12 +7,10 @@
 		// Reroute to index.php
 		header( 'Location: index.php' ) ;
 	}
-
-	if (strtoupper($_SERVER['REQUEST_METHOD']) == 'POST')
+	else if (strtoupper($_SERVER['REQUEST_METHOD']) == 'POST')
 	{
 		$email = $_POST['email'];
 		$pass = $_POST['password'];
-
 
 		$validform = true;
 
@@ -23,12 +21,14 @@
 		//Email does not exist in database
 		if($login_result->num_rows == 0){
 			$validform = false;
+			include "navbar.php";
 			print 'Email or password is incorrect <br>';
 		}else{
 			//Check for password match
 			list($dbid, $dbemail, $dbpass) = mysqli_fetch_array($login_result);
 			if(strcmp($pass, $dbpass) != 0){
 				$validform = false;
+				include "navbar.php";
 				print 'Email or password is incorrect <br>';
 			}
 		}
@@ -48,11 +48,16 @@
 				setcookie('password', $_POST['password'], time()+60);
 			}
 			
+			include "navbar.php";
 			print "You have successfully been logged in.<br>";
 			print "Click <a href='index.php'>here</a> to go home.</a><br>";
 			header( 'Location: index.php' ) ;
 		}
+		else
+			include "navbar.php";
 	}
+	else
+		include "navbar.php";
 
 ?>
 <html>

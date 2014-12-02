@@ -5,14 +5,14 @@
 
 <?php 
 
-	include "navbar.php";
+	//include "navbar.php";
 	include "dbconnect.php";
 
 	$sessionId = session_id();
 	if(empty($a)) session_start();
 		
 
-	function open($path, $name) {
+	/*function open($path, $name) {
 		$db = new PDO("mysql:host=localhost;dbname=cs174", "root", "");
 		$sql = "INSERT INTO session SET sessionID =" . $db->quote($sessionId) . ", session_data = '' ON DUPLICATE KEY UPDATE last_access = NOW()";
 		$db->query($sql);
@@ -57,6 +57,6 @@
 	 
 		$sql = "DELETE FROM session WHERE last_access < DATE_SUB(NOW(), INTERVAL " . $lifetime . " SECOND)";
 		$db->query($sql);
-	}
+	}*/
 
 ?>
