@@ -1,5 +1,8 @@
 <html>
-	<?php require_once('config.php'); ?>
+	<?php 
+		require_once('config.php');
+		include "navbar.php"; 
+	?>
 	<header>
 		<title>
 			CS174 - Group 1 - Home

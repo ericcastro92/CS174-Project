@@ -6,7 +6,8 @@
    Date   : Nov 1, 2014
    Description: A web form that collects users' data to write into the guestbook database table
 */
-require_once('config.php'); ?>
+require_once('config.php'); 
+include "navbar.php";?>
 <h2>Upload Your Video</h2>
 
  <form method="post" action="create_entry.php">

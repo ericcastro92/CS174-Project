@@ -1,5 +1,7 @@
 <?php
 	require_once('config.php');
+	include "navbar.php";
+	
 	if (strtoupper($_SERVER['REQUEST_METHOD']) == 'POST')
 	{
 		$email = $_POST['email'];

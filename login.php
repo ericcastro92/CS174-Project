@@ -1,5 +1,7 @@
 <?php
 	include "dbconnect.php";
+	$sessionId = session_id();
+	if(empty($sessionId)) session_start();
 	$successfulLogin = false;
 
 	// Check if logged in
