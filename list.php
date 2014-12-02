@@ -28,7 +28,6 @@
 </head>
 
 <body>
-	<h3>List of videos in database: </h3><br>
 	<table border="2" id="datatable" class="tablesorter">
 		<thead>
 			<tr>

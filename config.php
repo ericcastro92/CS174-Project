@@ -7,13 +7,11 @@
 
 	include "navbar.php";
 	include "dbconnect.php";
-	
+
 	$sessionId = session_id();
 	if(empty($a)) session_start();
-	
 		
-	session_set_save_handler("open", "close", "read", "write", "destroy", "gc");
-		
+
 	function open($path, $name) {
 		$db = new PDO("mysql:host=localhost;dbname=cs174", "root", "");
 		$sql = "INSERT INTO session SET sessionID =" . $db->quote($sessionId) . ", session_data = '' ON DUPLICATE KEY UPDATE last_access = NOW()";
@@ -33,6 +31,8 @@
 
 	function write($sessionId, $data) {
 		$db = new PDO("mysql:host=localhost;dbname=cs174", "root", "");
+		$fav = $_SESSION["favorites"];
+		$userID = $_COOKIES["loggedIn"];
 	 
 		$sql = "INSERT INTO session SET sessionID =" . $db->quote($sessionId) . ", favorites =" . $db->quote($data) . " ON DUPLICATE KEY UPDATE favorites =" . $db->quote($data);
 		$db->query($sql);
@@ -58,5 +58,5 @@
 		$sql = "DELETE FROM session WHERE last_access < DATE_SUB(NOW(), INTERVAL " . $lifetime . " SECOND)";
 		$db->query($sql);
 	}
-	
+
 ?>

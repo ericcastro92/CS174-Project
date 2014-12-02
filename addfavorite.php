@@ -3,6 +3,7 @@ require_once('config.php');
 
 if ($_POST)
 {
+
 	$videoid = $_POST["videoid"];
 
 	if (isset($_SESSION['favorites'])) {
@@ -19,6 +20,7 @@ if ($_POST)
 	else {
 		$_SESSION['favorites'] = $videoid;
 	}
+
 }
 
 ?>
