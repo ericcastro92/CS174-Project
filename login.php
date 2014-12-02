@@ -41,7 +41,7 @@
 			}
 			
 			print "You have successfully been logged in.<br>";
-			print "Click <a href='index.html'>here</a> to go home.</a><br>";
+			print "Click <a href='index.php'>here</a> to go home.</a><br>";
 		
 			
 			
