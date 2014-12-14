@@ -1,26 +1,45 @@
 <?php
-require_once('config.php');
+	require_once('dbconnect.php');
 
-if ($_POST)
-{
 
-	$videoid = $_POST["videoid"];
+	$sessionId = session_id();
+	if(empty($sessionId)) session_start();
 
-	if (isset($_SESSION['favorites'])) {
-		$fav = $_SESSION['favorites'];
+	if ($_POST)
+	{
 
-		$array = explode(" ", $_SESSION['favorites']);
+		$videoid = $_POST["videoid"];
+		$email;
 
-		if (!in_array($videoid, $array))
-		{
-			$_SESSION['favorites'] = $fav . " " . $videoid;
+		if (isset($_COOKIE['loggedIn'])) {
+			$email = $_COOKIE['loggedIn'];
+		}
+
+		if (isset($_SESSION['favorites'])) {
+			$fav = $_SESSION['favorites'];
+
+			$array = explode(" ", $_SESSION['favorites']);
+
+			if (!in_array($videoid, $array))
+			{
+				$favorites = $fav . " " . $videoid;
+				$_SESSION['favorites'] = $favorites;
+				$query = "UPDATE session SET favorites=\"$favorites\" WHERE email=\"$email\"";
+				mysqli_query($conn, $query);
+				echo "Successfully added into wishlist";
+			}
+			else {
+				echo "Already added into wishlist";
+			}
+
+		}
+		else {
+			$_SESSION['favorites'] = $videoid;
+			$query = "INSERT INTO session(email,favorites) VALUES(\"$email\",\"$videoid\")";
+			mysqli_query($conn, $query);
+			echo "Successfully added into wishlist";
 		}
 
 	}
-	else {
-		$_SESSION['favorites'] = $videoid;
-	}
-
-}
 
 ?>

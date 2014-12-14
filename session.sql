@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 14, 2014 at 01:57 AM
+-- Generation Time: Dec 14, 2014 at 01:58 AM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -23,27 +23,24 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Table structure for table `session`
 --
 
-CREATE TABLE IF NOT EXISTS `users` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS `session` (
+  `sessionID` varchar(32) NOT NULL,
+  `favorites` text NOT NULL,
+  `last_access` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `email` varchar(30) NOT NULL,
-  `password` varchar(30) NOT NULL,
-  `role` enum('A','U') CHARACTER SET utf8 NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+  PRIMARY KEY (`sessionID`),
+  UNIQUE KEY `userID` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `users`
+-- Dumping data for table `session`
 --
 
-INSERT INTO `users` (`id`, `email`, `password`, `role`) VALUES
-(1, 'ericcastro92@gmail.com', 'Tester123', 'A'),
-(2, 'test', 'test', 'A'),
-(3, 'user', 'user', 'U'),
-(4, 'john2@tester.com', 'Tester123', 'U');
+INSERT INTO `session` (`sessionID`, `favorites`, `last_access`, `email`) VALUES
+('', '2', '2014-12-14 00:12:41', 'test');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -40,7 +40,7 @@
 
 		//Insert login data to table if all criteria are met
 		if($validform){
-			$query = "INSERT into users (email, password) values ('$email','$pass')";
+			$query = "INSERT into users (email, password, role) values ('$email','$pass','U')";
 			mysqli_query($conn, $query);
 
 			print "You have successfully been registered<br>";

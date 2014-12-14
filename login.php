@@ -43,6 +43,23 @@
 
 			setcookie('loggedIn', $_POST['email'], time()+60);
 
+			$email = $_POST['email'];
+			$query = "SELECT * FROM session WHERE email=\"$email\"";
+			$result = mysqli_query($conn, $query);
+
+			if (mysqli_num_rows($result) > 0) {
+				$data = mysqli_fetch_array($result);
+				$_SESSION['favorites'] = $data['favorites'];
+			}
+
+			$query = "SELECT * FROM users WHERE email=\"$email\"";
+			$result = mysqli_query($conn, $query);
+
+			if (mysqli_num_rows($result) > 0) {
+				$data = mysqli_fetch_array($result);
+				setcookie('role',$data['role'], time()+60);
+			}
+
 			if(isset($_POST['keepLogin']))
 			{
 				//Keeps user logged in for 5 minutes

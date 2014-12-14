@@ -5,7 +5,6 @@
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
 	<?php
 		require_once('config.php');
-		include "navbar.php";
 	?>
 	
 	
@@ -21,14 +20,56 @@
 		//});
 		
 		function addFavorite(id) {
-			$.post("addfavorite.php", {videoid:id});
+			$.post("addfavorite.php", {videoid:id},function(data){
+				alert(data);
+				location.reload();
+			});
 		}
+
+		function removeFavorite(id) {
+			var confirm = window.confirm("Are you sure you want to remove this from favorites?");
+
+			if(confirm){
+				$.post("removefavorite.php", {videoid:id},function(data){
+					alert(data);
+					location.reload();
+				});
+			}
+		}
+
 	</script>
 	
 	
 </head>
 
 <body>
+	<?php 
+		include "navbar.php"; 
+
+		$fav;
+
+		if(isset($_SESSION['favorites'])) {
+			$fav = explode(" ", $_SESSION['favorites']);
+		}
+
+		function favoriteButton($id) {
+			global $fav;
+
+			if (isset($_SESSION['favorites'])){
+				if (!in_array($id, $fav)) {
+					echo "<td><button type='button' onclick='addFavorite($id)' class='favbutton' id='$id'>Add to favorites</button></td>";
+				}
+				else {
+					echo "<td><button type='button' onclick='removeFavorite($id)' class='favbutton'>Remove from favorites</button>";
+				}
+			}
+			else{
+				echo "<td><button type='button' onclick='addFavorite($id)' class='favbutton' id='$id'>Add to favorites</button></td>";
+			}
+
+		}
+
+	?>
 	<table border="2" id="datatable" class="tablesorter">
 		<thead>
 			<tr>
@@ -41,7 +82,11 @@
 				<th>View Count</th>
 				<th>Video type</th>
 				<th>Tags</th>
-				<th>Favorite</th>
+				<?php 
+					if(isset($_COOKIE['loggedIn'])) {
+						echo "<th>Favorite</th>";
+					}
+				?>
 			</tr>
 		</thead>
 		
@@ -64,7 +109,7 @@
 				
 				// Video image and link
 				echo "<tr><td>
-				<a href='".$link."' target='_blank'><img src='".$thumbnail."' alt='".$thumbnail."' height='100' width='200'></a>
+				<a href='". $link ."' target='_blank'><img src='".htmlspecialchars($thumbnail)."' alt='".$thumbnail."' height='50' width='100'></a>
 				</td>";
 				
 				// Video title
@@ -89,10 +134,12 @@
 				echo "<td>".$type."</td>";
 				
 				// Video's Tags
-				echo "<td>".$tags."</td>";
+				echo "<td width=100>".$tags."</td>";
 				
 				// Favorite button
-				echo "<td><button type='button' onclick='addFavorite($videoid)' class='favbutton' id='$videoid'>Add to favorites</button></td>";
+				if (isset($_COOKIE['loggedIn'])) {
+					favoriteButton($videoid);
+				}
 				
 				// End of row
 				echo "</tr>";

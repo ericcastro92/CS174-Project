@@ -6,7 +6,8 @@
 </head>
 <body>
 	<?php
-    	include("dbconnect.php");
+    	include("config.php");
+        include("navbar.php");
     ?>
     
     <h1>Modify Videos</h1>
