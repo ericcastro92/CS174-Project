@@ -2,6 +2,7 @@
 <script type="text/javascript" src="./js/jquery-2.1.1.js"></script>
 <script type="text/javascript" src="./js/jquery-latest.js"></script> 
 <script type="text/javascript" src="./js/jquery.tablesorter.js"></script> 
+<link href="css/bootstrap.min.css" rel="stylesheet">
 
 <?php 
 
