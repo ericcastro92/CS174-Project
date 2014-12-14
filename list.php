@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <HTML>
 <head>
-	<title>CS 174 Bonus HW</title>
+	<title>CS 174 Project</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
 	<?php
 		require_once('config.php');
@@ -11,7 +11,8 @@
 	<script>
 		$(document).ready(function() 
 			{ 
-				$("#datatable").tablesorter(); 
+				//$("#datatable").tablesorter(); 
+				$('#datatable').DataTable();
 			} 
 		); 
 		
