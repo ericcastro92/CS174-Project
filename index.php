@@ -21,17 +21,21 @@
 		</div>
 
 		<div align = "center">
-			Videos you might have missed!
+			<div class="page-header">
+				<h1>Videos you might have missed!<h1>
+			</div>
 			<table border="1">
 				<tr>
 				<?php
 				//Select 5 random videos from database
 					$query = "SELECT * FROM fun_video ORDER BY RAND() LIMIT 5";
 					$data = mysqli_query($conn, $query) or die(mysql_error());
-					$count = 0;
 					while($info = mysqli_fetch_array($data)){
-						//$html_icn = ;
-						print "<td>".$count++."</td>";
+						$title = $info["title"];
+						$link = $info["videolink"];
+						$thumbnail = $info["iconimage"];
+						$html_insert = "<a href='$link'><img src='$thumbnail' alt='$title' title='$title'/></a>";
+						print "<td>".$html_insert."</td>";
 					}
 				?>
 				</tr>
