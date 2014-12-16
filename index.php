@@ -20,6 +20,24 @@
 			<button id="next-button">Next</button>
 		</div>
 
+		<div align = "center">
+			Videos you might have missed!
+			<table border="1">
+				<tr>
+				<?php
+				//Select 5 random videos from database
+					$query = "SELECT * FROM fun_video ORDER BY RAND() LIMIT 5";
+					$data = mysqli_query($conn, $query) or die(mysql_error());
+					$count = 0;
+					while($info = mysqli_fetch_array($data)){
+						//$html_icn = ;
+						print "<td>".$count++."</td>";
+					}
+				?>
+				</tr>
+			</table>
+		</div>
+
 		<?php
 			include 'list.php';
 			if(isset($_COOKIE['loggedIn']))
