@@ -11,7 +11,7 @@
 			if ($_COOKIE['role'] == 'A') {
 				echo "
 						<li><a href='index.php'>Home</a></li>
-						<li><a href='list.php'>View Videos</a></li>
+						
 						<li><a href='upload.php'>Upload video</a></li>
 						<li><a href='modify.php'>Modify video</a></li>
 						<li><a href='editinfo.php'>Change password</a></li>
@@ -21,7 +21,7 @@
 			else {
 				echo "
 						<li><a href='index.php'>Home</a></li>
-						<li><a href='list.php'>View Videos</a></li>
+						
 						<li><a href='upload.php'>Upload video</a></li>
 						<li><a href='editinfo.php'>Change password</a></li>
 						<li><a href='logout.php'>Logout</a></li>
@@ -33,7 +33,7 @@
 			echo "
 					<li><a href='login.php'>Login</a></li>
 					<li><a href='register.php'>Register</a></li>
-					<li><a href='list.php'>View Videos</a></li>
+					
 				";
 		}
 	}	
@@ -45,7 +45,7 @@
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Group 1</a>
+      <a class="navbar-brand" href="index.php">Group 1</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->

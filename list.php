@@ -4,7 +4,7 @@
 	<title>CS 174 Project</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
 	<?php
-		require_once('config.php');
+		//require_once('config.php');
 	?>
 	
 	
@@ -45,7 +45,7 @@
 
 <body>
 	<?php 
-		include "navbar.php"; 
+		//include "navbar.php"; 
 
 		$fav;
 
