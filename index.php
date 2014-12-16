@@ -9,30 +9,8 @@
 		</title>
 		<!-- Slideshow script -->
 		<script src="js/slideshow.js"></script>
-		<style>
-			#ytplayer {    
-			    /*position: absolute;*/
-			    min-width:            1080px;
-			    min-height:            720px;
-			    height: auto;
-			    width: 100%;
-			    /*margin: -100px 0 0 -200px;*/
-			    /* left: 50%; */
-			}
-
-			.canvas {
-			    position: absolute;
-			    width: 100%;
-			    /*height: 390px;*/
-			    margin: 0 0 0 -50%;
-			    left: 50%; /*150px;*/
-			    top: 100px;
-			    color: #ffffff;
-			    text-align: center;
-			    font-size: 40px;
-			    font-family: "Arial", sans-serif;
-			}
-		</style>
+		<!-- Index page css -->
+		<link rel="stylesheet" type="text/css" href="css/index.css">
 	</header>
 	<body>
 		<iframe id="ytplayer" frameborder="0" allowfullscreen="1" title="YouTube video player" width="1080" height="720" src="//www.youtube.com/embed/0Y_GULVhJmM?controls=0&amp;showinfo=1&amp;autoplay=1&amp;enablejsapi=1&amp;"></iframe>
