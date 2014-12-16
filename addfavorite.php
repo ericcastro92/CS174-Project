@@ -26,10 +26,10 @@
 				$_SESSION['favorites'] = $favorites;
 				$query = "UPDATE session SET favorites=\"$favorites\" WHERE email=\"$email\"";
 				mysqli_query($conn, $query);
-				echo "Successfully added into wishlist";
+				echo "Successfully added into favorites";
 			}
 			else {
-				echo "Already added into wishlist";
+				echo "Already added into favorites";
 			}
 
 		}
@@ -37,7 +37,7 @@
 			$_SESSION['favorites'] = $videoid;
 			$query = "INSERT INTO session(email,favorites) VALUES(\"$email\",\"$videoid\")";
 			mysqli_query($conn, $query);
-			echo "Successfully added into wishlist";
+			echo "Successfully added into favorites";
 		}
 
 	}
