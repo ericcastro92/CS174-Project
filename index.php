@@ -11,7 +11,7 @@
 		</title>
 		
 		<form name="form 1" method="post" action="searchresults.php"
-                <input name="search" type="text" size="40" maxlength="50"/>
+                <input name="searchterm" type="text" placeholder="Search.." size="40" maxlength="50"/>
                 <input type="submit" name="submit" value="Search"/>
 		<!-- Slideshow script -->
 		<script src="js/slideshow.js"></script>
