@@ -20,7 +20,6 @@
 	</header>
 		<iframe id="ytplayer" frameborder="0" allowfullscreen="1" title="YouTube video player" width="1080" height="720" src="//www.youtube.com/embed/0Y_GULVhJmM?controls=0&amp;showinfo=1&amp;autoplay=1&amp;enablejsapi=1&amp;"></iframe>
 		<div id="canvas" class="canvas">
-			<h1 align="center">Judo</h1>
 			<button id="prev-button">Prev</button>
 			<button id="next-button">Next</button>
 		</div>
