@@ -10,14 +10,14 @@
 			CS174 - Group 1 - Home
 		</title>
 		
-		<form name="form 1" method="post" action="searchresults.php">
-                <input name="searchterm" type="text" placeholder="Search.." size="40" maxlength="50"/>
-                <input type="submit" name="submit" value="Search"/>
+		
+
 		<!-- Slideshow script -->
 		<script src="js/slideshow.js"></script>
 		<!-- Index page css -->
 		<link rel="stylesheet" type="text/css" href="css/index.css">
 	</header>
+
 		<iframe id="ytplayer" frameborder="0" allowfullscreen="1" title="YouTube video player" width="1080" height="720" src="//www.youtube.com/embed/0Y_GULVhJmM?controls=0&amp;showinfo=1&amp;autoplay=1&amp;enablejsapi=1&amp;"></iframe>
 		<div id="canvas" class="canvas">
 			<button id="prev-button">Prev</button>
