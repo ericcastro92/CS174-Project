@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 14, 2014 at 01:57 AM
+-- Generation Time: Dec 17, 2014 at 08:36 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -33,17 +33,16 @@ CREATE TABLE IF NOT EXISTS `users` (
   `role` enum('A','U') CHARACTER SET utf8 NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `email`, `password`, `role`) VALUES
-(1, 'ericcastro92@gmail.com', 'Tester123', 'A'),
-(2, 'test', 'test', 'A'),
-(3, 'user', 'user', 'U'),
-(4, 'john2@tester.com', 'Tester123', 'U');
+(4, 'john2@tester.com', 'Tester123', 'U'),
+(5, 'admin@admin.com', 'Admin123', 'A'),
+(6, 'test@test.com', 'Tester123', 'U');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
