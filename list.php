@@ -1,11 +1,4 @@
-<!DOCTYPE HTML>
-<HTML>
-<head>
-	<title>CS 174 Project</title>
-	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
-	<?php
-		//require_once('config.php');
-	?>
+
 	
 	
 	<script>
@@ -37,13 +30,8 @@
 				});
 			}
 		}
-
 	</script>
-	
-	
-</head>
 
-<body>
 	<?php 
 		//include "navbar.php"; 
 
@@ -71,7 +59,10 @@
 		}
 
 	?>
-	<table border="2" id="datatable" class="tablesorter">
+
+	<h2> All Videos </h2>
+
+	<table border="2" id="datatable" class="table table-hover table-bordered table-condensed">
 		<thead>
 			<tr>
 				<th>Video</th>
@@ -153,6 +144,3 @@
 
 
 
-
-
-</body>

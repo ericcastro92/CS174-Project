@@ -1,4 +1,6 @@
+<!DOCTYPE html>
 <html>
+	<body>
 	<?php 
 		require_once('config.php');
 		include "navbar.php"; 
@@ -12,7 +14,6 @@
 		<!-- Index page css -->
 		<link rel="stylesheet" type="text/css" href="css/index.css">
 	</header>
-	<body>
 		<iframe id="ytplayer" frameborder="0" allowfullscreen="1" title="YouTube video player" width="1080" height="720" src="//www.youtube.com/embed/0Y_GULVhJmM?controls=0&amp;showinfo=1&amp;autoplay=1&amp;enablejsapi=1&amp;"></iframe>
 		<div id="canvas" class="canvas">
 			<h1 align="center">Judo</h1>
@@ -22,7 +23,7 @@
 
 		<div align = "center">
 			<div class="page-header">
-				<h1>Videos you might have missed!<h1>
+				<h1>Videos you might have missed!</h1>
 			</div>
 			<table border="1">
 				<tr>
@@ -49,7 +50,7 @@
 				echo "<h2>Favorites</h2>";
 				if(isset($_SESSION['favorites'])) {
 					echo "
-						<table border='2' id='datatable' class='tablesorter'>
+						<table border='2' class='table table-hover table-bordered table-condensed'>
 						<thead>
 							<tr>
 								<th>Video</th>
@@ -123,5 +124,6 @@
 				else echo "No favorited videos";
 			}
 		?>
+
 	</body>
 </html>
