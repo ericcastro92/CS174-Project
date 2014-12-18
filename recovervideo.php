@@ -21,7 +21,7 @@
         $result = mysqli_query($conn, "select * from fun_video where title ='$to_be_recovered_name'");
         if ($result)
         {
-        list($id, $title, $videolink, $videolength, $highestresolution, $description, $language, $viewcount, $videotype, $iconimage, $tag) = mysqli_fetch_array($result);
+        list($id, $title, $videolink, $videolength, $highestresolution, $description, $language, $viewcount, $videotype, $iconimage, $tag, $category) = mysqli_fetch_array($result);
              if ($title!=null)
              {
         echo "
@@ -53,6 +53,80 @@
                 <option value=1080 >1080p</option>
             </select>
          </p>
+
+         <p>
+            <label for='category'>Category: </label>
+            <select id = 'category' name = 'category'>";
+
+        echo "<option value='Tae kwon do' ";
+        if (strcmp($category,"Tae kwon do") == 0){
+            echo "selected";
+        }
+        echo ">Tae kwon do</option>";
+
+        echo "<option value='Yang Taichi' ";
+        if (strcmp($category,"Yang Taichi") == 0){
+            echo "selected";
+        }
+        echo ">Yang Taichi</option>";
+        
+        echo "<option value='Chen Taichi' ";
+        if (strcmp($category,"Chen Taichi") == 0){
+            echo "selected";
+        }
+        echo ">Chen Taichi</option>";
+
+        echo "<option value='Sun Taichi' ";
+        if (strcmp($category,"Sun Taichi") == 0) {
+            echo "selected";
+        }
+        echo ">Sun Taichi</option>";
+
+        echo "<option value='Wu Taichi' ";
+        if (strcmp($category,"Wu Taichi") == 0){
+            echo "selected";
+        }
+        echo ">Wu Taichi</option>";
+
+        echo "<option value='Qi Gong' ";
+        if (strcmp($category,"Qi Gong") == 0){
+            echo "selected";
+        }
+        echo ">Qi Gong</option>";
+
+        echo "<option value='Shaolin' ";
+        if (strcmp($category,"Shaolin") == 0){
+            echo "selected";
+        }
+        echo ">Shaolin</option>";
+
+        echo "<option value='Wing Chun' ";
+        if (strcmp($category,"Wing Chun") == 0){
+            echo "selected";
+        }
+        echo ">Wing Chun</option>";
+
+        echo "<option value='Aikido' ";
+        if (strcmp($category,"Aikido") == 0){
+            echo "selected";
+        }
+        echo ">Aikido</option>";
+
+        echo "<option value='Judo' ";
+        if (strcmp($category,"Judo") == 0) {
+            echo "selected";
+        }
+        echo ">Judo</option>";
+
+        echo "<option value='KungFu Movie' ";
+        if (strcmp($category,"KungFu Movie") == 0) {
+            echo "selected";
+        }
+        echo ">KungFu Movie</option>";
+
+
+        echo "</select>
+        </p>
          
          <p>
          	<label for description> Video Description: </label>

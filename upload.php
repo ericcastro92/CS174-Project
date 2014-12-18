@@ -40,6 +40,23 @@ include "navbar.php";?>
          </p>
          
          <p>
+            <label for="category">Category: </label>
+            <select id = "category" name = "category">
+                <option value="Yang Taichi">Yang Taichi</option>
+                <option value="Chen Taichi">Chen Taichi</option>
+                <option value="Sun Taichi">Sun Taichi</option>
+                <option value="Wu Taichi">Wu Taichi</option>
+                <option value="QiGong">QiGong</option>
+                <option value="Shaolin">Shaolin</option>
+                <option value="Tae kwon do">Tae kwon do</option>
+                <option value="Wing Chun">Wing Chun</option>
+                <option value="Aikido">Aikido</option>
+                <option value="Judo">Judo</option>
+                <option value="KungFu Movie">KungFu Movie</option>
+            </select>
+        </p>
+
+         <p>
          	<label for "description"> Video Description: </label>
             <textarea id="description" name="description" cols="40" rows="4" class="field-large"></textarea>
          </p>

@@ -64,6 +64,7 @@
 								<th>Language</th>
 								<th>View Count</th>
 								<th>Video type</th>
+								<th>Category</th>
 								<th>Tags</th>
 							</tr>
 						</thead>
@@ -90,6 +91,7 @@
 						$type=$info["videotype"];
 						$thumbnail=$info["iconimage"];
 						$tags=$info["tag"];
+						$category=$info["category"];
 
 						// Video image and link
 						echo "<tr><td>
@@ -117,6 +119,9 @@
 						// Video type
 						echo "<td>".$type."</td>";
 						
+						// Category
+						echo "<td>".$category."</td>";
+
 						// Video's Tags
 						echo "<td>".$tags."</td>";
 

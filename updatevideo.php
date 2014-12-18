@@ -20,18 +20,19 @@
 		$tag = $_POST['tag'];
 		$videotype = implode("," , $_POST['videotype'] );
 		$name_entered = $_POST['name_entered'];
+		$category = $_POST['category'];
 		include("dbconnect.php");
 				$query = "update fun_video "
 						." set  title ='$title',videolink='$videolink', videolength='$videolength',"
 						." highestresolution='$highestresolution',"
 						." description='$description', language='$language', viewcount='$viewcount',"
-						." videotype = '$videotype', iconimage='$iconimage', tag='$tag' "
+						." videotype = '$videotype', iconimage='$iconimage', tag='$tag', category='$category' "
 						." where title = '$name_entered'"
 				;
 				mysqli_query($conn, $query);
     ?>
     <h2>Changes have been made. Click 
-    <a href="view.php">here</a> to view updated website.</h2>
+    <a href="index.php">here</a> to view updated website.</h2>
 
 </body>
 </html>
