@@ -1,9 +1,10 @@
 <?php
+	$sessionId = session_id();
+	if(empty($sessionId)) session_start();
+
 	require_once('dbconnect.php');
 
 	
-	$sessionId = session_id();
-	if(empty($sessionId)) session_start();
 
 	if ($_POST)
 	{
@@ -28,7 +29,10 @@
 
 			if (count($array) == 0){
 				$query = "DELETE FROM session WHERE email=\"$email\"";
-				mysqli_query($conn,$query);
+				mysqli_query($conn,$query) or die(mysql_error());
+				unset($_SESSION['favorites']);
+				session_unset();
+				session_write_close();
 			}
 			else {
 				$query = "UPDATE session SET favorites=\"$favorites\" WHERE email=\"$email\"";
@@ -36,7 +40,7 @@
 			}
 
 
-			echo "Successfully removed from wishlist";
+			echo "Successfully removed from favorites";
 
 		}
 

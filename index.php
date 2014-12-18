@@ -66,7 +66,7 @@
 				<option value='Chen Taichi'>Chen Taichi</option>;
 				<option value='Sun Taichi'>Sun Taichi</option>;
 				<option value='Wu Taichi'>Wu Taichi</option>;
-				<option value='Qi Gong'>Qi Gong</option>;
+				<option value='QiGong'>Qi Gong</option>;
 				<option value='Shaolin'>Shaolin</option>;
 				<option value='Wing Chun'>Wing Chun</option>;
 				<option value='Aikido'>Aikido</option>;

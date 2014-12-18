@@ -88,7 +88,7 @@
         }
         echo ">Wu Taichi</option>";
 
-        echo "<option value='Qi Gong' ";
+        echo "<option value='QiGong' ";
         if (strcmp($category,"Qi Gong") == 0){
             echo "selected";
         }
