@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.2.7.1
+-- version 4.1.14
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 18, 2014 at 12:36 AM
--- Server version: 5.6.20
--- PHP Version: 5.5.15
+-- Generation Time: Dec 18, 2014 at 01:28 AM
+-- Server version: 5.6.17
+-- PHP Version: 5.5.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -23,11 +23,11 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `fun_video_all`
+-- Table structure for table `fun_video`
 --
 
-CREATE TABLE IF NOT EXISTS `fun_video_all` (
-`id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `fun_video` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(250) COLLATE utf8_unicode_ci NOT NULL,
   `videolink` text COLLATE utf8_unicode_ci NOT NULL,
   `videolength` int(6) NOT NULL,
@@ -38,14 +38,15 @@ CREATE TABLE IF NOT EXISTS `fun_video_all` (
   `videotype` set('Tutorial','Entertainment','Application','Weapon','Group demo','Others') COLLATE utf8_unicode_ci NOT NULL,
   `iconimage` text COLLATE utf8_unicode_ci NOT NULL,
   `tag` text COLLATE utf8_unicode_ci NOT NULL,
-  `category` enum('Yang Taichi','Chen Taichi','Sun Taichi','Wu Taichi','QiGong','Shaolin','Tae kwon do','Wing Chun','Aikido','Judo','KungFu Movie') COLLATE utf8_unicode_ci NOT NULL
+  `category` enum('Yang Taichi','Chen Taichi','Sun Taichi','Wu Taichi','QiGong','Shaolin','Tae kwon do','Wing Chun','Aikido','Judo','KungFu Movie') COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=968 ;
 
 --
--- Dumping data for table `fun_video_all`
+-- Dumping data for table `fun_video`
 --
 
-INSERT INTO `fun_video_all` (`id`, `title`, `videolink`, `videolength`, `highestresolution`, `description`, `language`, `viewcount`, `videotype`, `iconimage`, `tag`, `category`) VALUES
+INSERT INTO `fun_video` (`id`, `title`, `videolink`, `videolength`, `highestresolution`, `description`, `language`, `viewcount`, `videotype`, `iconimage`, `tag`, `category`) VALUES
 (1, '4th Kyu Techniques & Test Requirements Part 1', 'http://www.youtube.com/watch?v=--S-w3L-rRs', 10, '480', 'Yoshimitsu Yamada, a direct student of O Sensei for more than ten years, is an 8th dan and the chief instructor at the New York Aikikai. Currently, he is Chairman of the Board of the United States Aikido Federation and the Latin America Aikido Federation. He is the author of Aikido Complete and has made multiple aikido training tapes.\r\n\r\nYamada Sensei is well known for his clear and strong basic technique. He teaches seminars all over the world where thousands of students attend his classes.', 'Non-English', 80087, 'Tutorial,Application', 'http://i.ytimg.com/vi/--S-w3L-rRs/mqdefault.jpg', 'aikido, techniques, kyu, test, requirements', 'Aikido'),
 (2, 'Real aikido highlights', 'http://www.youtube.com/watch?v=-ked1M-nwAg', 5, '480', 'Serbian Self-Defense Martial Art - "REAL AIKIDO"', 'English', 88872, 'Entertainment,Others', 'http://i.ytimg.com/vi_webp/-ked1M-nwAg/mqdefault.webp', 'aikido, self, defense, real, highlight', 'Aikido'),
 (3, 'Aikido Demostration', 'http://www.youtube.com/watch?v=-RaUpEMpxuY', 7, '240', 'Aikido', 'Non-English', 870873, 'Tutorial', 'http://i.ytimg.com/vi/-RaUpEMpxuY/mqdefault.jpg', 'Sports, Demonstration, Fighting, Tournament, History', 'Aikido'),
@@ -174,7 +175,7 @@ INSERT INTO `fun_video_all` (`id`, `title`, `videolink`, `videolength`, `highest
 (127, 'Tai chi for beginners - Yang Basic 8 step', 'http://www.youtube.com/embed/EOPHsY0FnlE', 3, '720', 'Learn the basics of Tai chi for beginners from a real tai chi master. Master Wong tai chi available in Ipswich, Suffolk and online offers ', 'English', 125908, 'Tutorial', 'http://i.ytimg.com/vi/EOPHsY0FnlE/mqdefault.jpg', 'demonstration, tutorial, solo', 'Chen Taichi'),
 (128, 'Chen Tai Chi Push Hand #1(Master Cheng Jincai???)', 'http://www.youtube.com/embed/ETeY4zFl6xg', 9, '240', 'The Master teacher - Cheng Jincai is a successor of the 18th generation Grand master Chen Zhaokui in North America. He is Chairman of American Chen Style Tai Chi Federation', 'Non-English', 68106, 'Group demo', 'http://i.ytimg.com/vi/ETeY4zFl6xg/mqdefault.jpg', 'group, demonstration, training', 'Chen Taichi'),
 (129, 'Taiji - Chen Style', 'http://www.youtube.com/embed/fS0QYq26V2g', 4, '240', 'Ten year old kid performing Chen Style Taiji (????) in a park', 'English', 480401, 'Tutorial', 'http://i.ytimg.com/vi/fS0QYq26V2g/mqdefault.jpg', 'solo, demonstration, intermediate', 'Chen Taichi');
-INSERT INTO `fun_video_all` (`id`, `title`, `videolink`, `videolength`, `highestresolution`, `description`, `language`, `viewcount`, `videotype`, `iconimage`, `tag`, `category`) VALUES
+INSERT INTO `fun_video` (`id`, `title`, `videolink`, `videolength`, `highestresolution`, `description`, `language`, `viewcount`, `videotype`, `iconimage`, `tag`, `category`) VALUES
 (130, 'Ma Hong--Applications of Taichi Chen Style(2) ??', 'http://www.youtube.com/embed/FzbxuR89U8E', 43, '240', 'Applications of Taichi Chen Style', 'Non-English', 131097, 'Application', 'http://i.ytimg.com/vi/FzbxuR89U8E/mqdefault.jpg', 'application, solo', 'Chen Taichi'),
 (131, 'Tai Chi (Chen Style) Part 01 ?????-?????????', 'http://www.youtube.com/embed/GgU3K7uq2_M', 50, '240', 'Tai Chi style part 1', 'Non-English', 91781, 'Tutorial', 'http://i.ytimg.com/vi/GgU3K7uq2_M/mqdefault.jpg', 'tutorial, solo', 'Chen Taichi'),
 (132, 'Fajin (Fajing) in Chen Tai Chi Cannon Fist and App', 'http://www.youtube.com/embed/GuwxgvhbSVM', 8, '240', 'Sifu Wei-Chung Lin (???), a disciple of the Yizungyue (???) School and the Chief Instructor of the Chinese Taoist Martial Arts ', 'English', 126490, 'Application', 'http://i.ytimg.com/vi/GuwxgvhbSVM/mqdefault.jpg', 'demonstration, solo', 'Chen Taichi'),
@@ -334,7 +335,7 @@ INSERT INTO `fun_video_all` (`id`, `title`, `videolink`, `videolength`, `highest
 (289, 'MONGOLIAN JUDO - JudoHeroes', 'http://www.youtube.com/watch?v=a4gz4c5bGj8', 5, '360', 'MONGOLIAN JUDO - JudoHeroes\r\n', 'English', 118864, 'Entertainment,Others', 'http://i.ytimg.com/vi/a4gz4c5bGj8/mqdefault.jpg', 'Mongolian, judo, application, variation', 'Judo'),
 (290, 'JUDO MOTIVATION', 'http://www.youtube.com/watch?v=A5MhxPwU1Q8', 4, '720', 'Hey judokas! It has been a while since I´ve uploaded a judo video last time! I know that you may be angry about that but there are few things and problems about making judo-based videos.\r\n', 'English', 56521, 'Entertainment', 'http://i.ytimg.com/vi/A5MhxPwU1Q8/mqdefault.jpg', 'judo, montage, motivation, application', 'Judo'),
 (292, 'One love. Judo motivation', 'http://www.youtube.com/watch?v=AxtWtv8UI8Y', 5, '480', '"I want to represent possibilities. I want to represent an idea." - Will Smith', 'English', 56680, 'Others', 'http://i.ytimg.com/vi/AxtWtv8UI8Y/mqdefault.jpg', 'judo, motivation, weird, love', 'Judo');
-INSERT INTO `fun_video_all` (`id`, `title`, `videolink`, `videolength`, `highestresolution`, `description`, `language`, `viewcount`, `videotype`, `iconimage`, `tag`, `category`) VALUES
+INSERT INTO `fun_video` (`id`, `title`, `videolink`, `videolength`, `highestresolution`, `description`, `language`, `viewcount`, `videotype`, `iconimage`, `tag`, `category`) VALUES
 (293, 'Little Britain, Lou & Andy - Judo', 'http://www.youtube.com/watch?v=b0DvK7saV0I', 1, '240', 'lou is learning judo ', 'English', 1309871, 'Entertainment', 'https://i.ytimg.com/vi/b0DvK7saV0I/mqdefault.jpg', 'Judo, Little Britain, Lou & Andy', 'Judo'),
 (294, 'The Art Of Judo (Highlights) | Olympics', 'http://www.youtube.com/watch?v=BhsBSmrTB-U', 3, '1080', 'Judo made its very first appearance at the Olympic Games in 1964 in Tokyo.', 'English', 71986, 'Tutorial,Entertainment', 'https://i.ytimg.com/vi/BhsBSmrTB-U/mqdefault.jpg', 'Games,Olympic,Tokyo', 'Judo'),
 (295, 'Judo Training Hiroshi Katanishi', 'http://www.youtube.com/watch?v=BQQmh_kQ-Ew', 2, '480', 'Judo training and exercised', 'English', 86228, 'Tutorial', 'http://i.ytimg.com/vi/BQQmh_kQ-Ew/mqdefault.jpg', 'Exercises, Judo, Training', 'Judo'),
@@ -473,7 +474,7 @@ INSERT INTO `fun_video_all` (`id`, `title`, `videolink`, `videolength`, `highest
 (430, 'Tai Chi Qigong Shibashi (1 of 2)', 'http://www.youtube.com/watch?v=c60u6WfChmM', 1500, '360', 'Tai Chi Qigong Shibashi is a Qigong which based on the philosophy of Tai Chi and extracts some of the best movements from the Yang style Tai Chi Chuan. It places emphasis on synchronizing the 18 movements with proper breathing techniques.', 'Non-English', 454773, 'Tutorial', 'http://i.ytimg.com/vi_webp/c60u6WfChmM/mqdefault.webp', 'taichi, qigong, shibashi,best, movements, yang style, breathing', 'QiGong'),
 (431, 'Qi Gong for Upper Back and Neck Pain with Lee Hold', 'http://www.youtube.com/watch?v=CFa_rwMctmA', 2, '480', 'All that time on the cell phone and computer does a number on our necks and upper backs. Acclaimed instructor Lee Holden offers some quick relief in this preview from his popular Qi Gong series. The simple-to-do stretches release blocked tension, restore energy and work wonders to alleviate headaches, jaw pain, shoulder tightness and more.', 'English', 72180, 'Tutorial', 'http://i.ytimg.com/vi/CFa_rwMctmA/mqdefault.jpg', 'Lee, Holden, Exercise, Health, Fitness, Energy, Rejuvenate, Tai, Chi, Yoga, Qi, Gong, Upper, Back, Neck, Pain', 'QiGong'),
 (432, 'Understanding QiGong and Qi 1/3', 'http://www.youtube.com/watch?v=CPl8JNxSYIY', 957, '360', 'Excerpt from Dr. Yang, Jwing-Ming DVD Qigong Massage, published by YMAA.com. This is the first part of 3', 'English', 555204, 'Tutorial,Application', 'http://i.ytimg.com/vi_webp/CPl8JNxSYIY/mqdefault.webp', 'Qi, Gong, Chi, Dr., Yang, part', 'QiGong');
-INSERT INTO `fun_video_all` (`id`, `title`, `videolink`, `videolength`, `highestresolution`, `description`, `language`, `viewcount`, `videotype`, `iconimage`, `tag`, `category`) VALUES
+INSERT INTO `fun_video` (`id`, `title`, `videolink`, `videolength`, `highestresolution`, `description`, `language`, `viewcount`, `videotype`, `iconimage`, `tag`, `category`) VALUES
 (433, 'Introduccion al Qi Gong', 'http://www.youtube.com/watch?v=CtDCME8phiU', 13010, '480', 'INTRODUCCION AL QI GONG comienza con los conceptos espirituales del Qi Gong. Qi Gong, pronunciado Chi Kung, es un ejercicio para fortalecer la salud, vitalidad, equilibrio interior y armonia. Desarrollado en China hace miles de anos -- algunas escuelas de Qi Gong determinan el periodo de su existencia en muchos miles de anos antes de Cristo', 'Non-English', 189585, 'Entertainment,Application', 'http://i.ytimg.com/vi_webp/CtDCME8phiU/mqdefault.webp', 'Qi Gong, espanol, introduccion, Tai Chi,qigong, equilibrio', 'QiGong'),
 (434, 'Sword Finger - amazing energy', 'http://www.youtube.com/watch?v=dFR0arLH5oY', 139, '360', 'A sample of video clips from Robert Peng''s DVD series, The Master Key. Follow along as Robert guides you step-by-step through the exercises described in the book, The Master Key.  Watch amazing animations bring the subtle energy flows to life.', 'English', 57110, 'Tutorial,Application', 'http://i.ytimg.com/vi_webp/dFR0arLH5oY/mqdefault.webp', 'Training, Robert peng, energy, sword,exercises', 'QiGong'),
 (435, 'Power of Meditation: Qigong Master Chi Energy', 'http://www.youtube.com/watch?v=dfy2Tn52sxU', 10, '240', 'This video explores the powers of meditation. This video is about person who has a true gift. If you enjoy this video, please send a link to it to all of your friends.', 'English', 184535, 'Tutorial,Application', 'http://i.ytimg.com/vi/dfy2Tn52sxU/mqdefault.jpg', 'Meditation, powers, qigong, energy', 'QiGong'),
@@ -590,7 +591,7 @@ INSERT INTO `fun_video_all` (`id`, `title`, `videolink`, `videolength`, `highest
 (548, 'Shaolin Kung fu - Shaolin monks Documentary', 'http://www.youtube.com/watch?v=mk7Em455ao8', 49, '240', 'A documentary about the life at the Shaolin Temple', 'English', 63052, 'Entertainment', 'http://img.youtube.com/vi/mk7Em455ao8/1.jpg', 'Kung Fu, Martial Arts, Shaolin, Documentary, Monks, Shaolin', 'Shaolin'),
 (549, 'Shaolin Kung Fu Stretches & Moves : Butterfly Kick', 'http://www.youtube.com/watch?v=mO2Skxg_GLQ', 2, '480', 'The butterfly kick is a spectacular Kung Fu move seen in many films; learn Kung Fu moves taught at r', 'English', 4738343, 'Tutorial', 'http://i.ytimg.com/vi/mO2Skxg_GLQ/mqdefault.jpg', 'Sports, Stretches, Moves, Butterfly Kick, Shaolin Kung Fu', 'Shaolin'),
 (550, 'Shaolin kung fu 18 basic combat methods', 'http://www.youtube.com/watch?v=N0ylNz9qLhM', 41, '360', 'instructor: Shi Decheng, from Shaolin temple', 'English', 518316, 'Tutorial', 'http://img.youtube.com/vi/N0ylNz9qLhM/1.jpg', 'Sport, Shaolin, Kung Fu, 18 Basic Combat, Techniques, Shi Decheng', 'Shaolin');
-INSERT INTO `fun_video_all` (`id`, `title`, `videolink`, `videolength`, `highestresolution`, `description`, `language`, `viewcount`, `videotype`, `iconimage`, `tag`, `category`) VALUES
+INSERT INTO `fun_video` (`id`, `title`, `videolink`, `videolength`, `highestresolution`, `description`, `language`, `viewcount`, `videotype`, `iconimage`, `tag`, `category`) VALUES
 (551, 'The real Shaolin warrior training', 'http://www.youtube.com/watch?v=NAzOVV5oRRk', 81, '240', '  http://youtu.be/XhHM2nBEEuo  https://www.facebook.com/romaindesboi...', 'Non-English', 154520, 'Entertainment', 'http://i.ytimg.com/vi/NAzOVV5oRRk/mqdefault.jpg', 'How to & Style, Training, Warrior, Real Shaolin', 'Shaolin'),
 (552, 'Shaolin Training', 'http://www.youtube.com/watch?v=nHIc9nm7vB4', 7, '480', 'Shaolin kids in training. The song playing is Fearless from Jay Chou', 'English', 1094947, 'Entertainment', 'http://i.ytimg.com/vi/nHIc9nm7vB4/mqdefault.jpg', 'Sports, Shaolin, Los Angeles, Feerless, Jay Chou', 'Shaolin'),
 (553, 'Deadliest Warrior, Maori Vs Shaolin Monk hawaiian ', 'http://www.youtube.com/watch?v=NrNqGuylAno', 5, '240', 'This is a short intro for myself, I am an actor as well as a special fx artist. In this clip Im givi', 'English', 88362, 'Entertainment', 'http://i.ytimg.com/vi/NrNqGuylAno/mqdefault.jpg', 'Deadliest Warrior, Maori, Shaolin Monk, Hawaiian, Weapon maker', 'Shaolin'),
@@ -749,7 +750,7 @@ INSERT INTO `fun_video_all` (`id`, `title`, `videolink`, `videolength`, `highest
 (712, 'Taekwondo & MMA Sampler on the Versys VS.1', 'http://www.youtube.com/watch?v=M2hYZQJfrS8', 3, '720', 'Me training on the new Versys VS.1 by Century. Thought I''d mix it up a bit with some ground fighting', 'English', 455093, 'Tutorial', 'http://i.ytimg.com/vi/M2hYZQJfrS8/mqdefault.jpg', 'sport', 'Tae kwon do'),
 (713, 'Taekwondo 540 Kick Tutorial', 'http://www.youtube.com/watch?v=m5DocuF1vHo', 9, '720', 'First of all this kick is not for fighting, it is a flashy move and to show your that you can do mor', 'English', 670166, 'Tutorial', 'http://i.ytimg.com/vi/m5DocuF1vHo/mqdefault.jpg', 'Sports', 'Tae kwon do'),
 (714, 'How to Taekwondo kick FASTER tutorial (taekwonwoo)', 'http://www.youtube.com/watch?v=McqhEl-aNZQ', 3, '720', 'Online taekwondo training with Master Woo ? http://taekwonwoo.net/online_taekwondo_training.php Yong', 'English', 230977, 'Tutorial', 'http://i.ytimg.com/vi/McqhEl-aNZQ/mqdefault.jpg', 'Sport', 'Tae kwon do');
-INSERT INTO `fun_video_all` (`id`, `title`, `videolink`, `videolength`, `highestresolution`, `description`, `language`, `viewcount`, `videotype`, `iconimage`, `tag`, `category`) VALUES
+INSERT INTO `fun_video` (`id`, `title`, `videolink`, `videolength`, `highestresolution`, `description`, `language`, `viewcount`, `videotype`, `iconimage`, `tag`, `category`) VALUES
 (715, 'Asian games 2014 Taekwondo -63kg Gold medal final ', 'http://www.youtube.com/watch?v=mIdbxJzSpTk', 10, '480', 'Korea: Lee Dae Hoon Thailand: Akkarin Kitwijarn Taekwondo Demonstration :http://goo.gl/BQYYpQ Taekwo', 'Non-English', 128706, 'Entertainment', 'http://i.ytimg.com/vi/mIdbxJzSpTk/mqdefault.jpg', 'Sports', 'Tae kwon do'),
 (716, 'Taekwondo Kicks and Sparring Techniques', 'http://www.youtube.com/watch?v=MvPPssY7jDk', 1, '240', 'http://www.black-eagle.co.uk/ This video shows various themes specific to Taekwondo, such as distanc', 'English', 760253, 'Tutorial', 'http://i.ytimg.com/vi/MvPPssY7jDk/mqdefault.jpg', 'sport', 'Tae kwon do'),
 (717, 'Taekwondo Kicks : Taekwondo Crescent Kicks', 'http://www.youtube.com/watch?v=N0qnEmIlnU8', 2, '480', 'The crescent kick is a great kick to add to your taekwondo arsenal. Learn to perform the crescent ki', 'English', 82515, 'Tutorial', 'http://i.ytimg.com/vi/N0qnEmIlnU8/mqdefault.jpg', 'Sport', 'Tae kwon do'),
@@ -888,7 +889,7 @@ INSERT INTO `fun_video_all` (`id`, `title`, `videolink`, `videolength`, `highest
 (856, 'China Wudang Light-Body Kungfu - Qing Gong - Maste', 'http://www.youtube.com/watch?v=m6QUWLMQ8AY', 3, '360', 'http://www.daoistkungfu.com This video shows Master Chen Shixing, top master in China today. His school, China Wudang ...', 'Non-English', 65818, 'Group demo', 'http://i.ytimg.com/vi/m6QUWLMQ8AY/mqdefault.jpg', 'sport', 'Wu Taichi'),
 (857, 'WuDang Taoist Qi gong / Tai Chi Master You Xuan de', 'http://www.youtube.com/watch?v=m86QhcK5psw', 3, '360', 'self defense, martial arts', 'Non-English', 175568, 'Tutorial,Entertainment,Group demo', 'http://i.ytimg.com/vi_webp/m86QhcK5psw/mqdefault.webp', 'sport, demo, martial arts', 'Wu Taichi'),
 (858, ' Tai Chi Sword Form 32 Yang Taiji Jian', 'http://www.youtube.com/watch?v=MxhAjv3YneM', 5, '240', 'Visit http://www.taichihealthways.com for more videos of Master Jesse Tsao on Yang, Chen, Wu, Sun tai chi tyle and Tai Chi sword, broadsword, qigong (Chi gong)for internal energy healing, bio-energy, Shaolin and Wudang Kung-fu martial arts. Tai Chi Health Ways host annual workshop with the top masters. ', 'English', 634459, 'Tutorial', 'http://i.ytimg.com/vi/MxhAjv3YneM/mqdefault.jpg', 'sword, tai chi, taiji, demo', 'Wu Taichi');
-INSERT INTO `fun_video_all` (`id`, `title`, `videolink`, `videolength`, `highestresolution`, `description`, `language`, `viewcount`, `videotype`, `iconimage`, `tag`, `category`) VALUES
+INSERT INTO `fun_video` (`id`, `title`, `videolink`, `videolength`, `highestresolution`, `description`, `language`, `viewcount`, `videotype`, `iconimage`, `tag`, `category`) VALUES
 (859, ' Wu Style Tai Chi Short Form Demonstrated by Bruce', 'http://www.youtube.com/watch?v=ocHe6dbR4ig', 5, '1080', 'Lineage Holder Bruce Frantzis demonstrates the small frame Wu Style Tai Chi Short Form.\r\n\r\nThis video was shot in Crete, Greece in 2010 during Bruce''s Longevity Breathing Instructor Training.\r\n\r\nYou can find out more about Tai Chi at http://www.energyarts.com/', 'English', 97414, 'Tutorial', 'http://i.ytimg.com/vi/ocHe6dbR4ig/mqdefault.jpg', 'wu style, tai chi, taiji, demo', 'Wu Taichi'),
 (860, 'Wudang Tai Chi Quan', 'http://www.youtube.com/watch?v=oX6rZ5qGq3c', 4, '240', ' Wudang Tai Chi Quan. There are many Wudang tai chi quan. Wudang tai chi 28 is a short form of Wudang tai chi 108. Wudang tai ... ', 'English', 105523, 'Others', 'http://i.ytimg.com/vi/oX6rZ5qGq3c/mqdefault.jpg', 'sport, demo, martial arts', 'Wu Taichi'),
 (861, ' An Interview with Ma Yueh Liang', 'http://www.youtube.com/watch?v=qaYrNNkeyq8', 2, '240', ' A short inteview with Ma Yueh Liang, 2nd generation Wu style Taiji successor. Ma Yueh Liang was a student of Wu Jiang Quan and was a major influence in spreading Wu Taiji to Shanghai, China.  ', 'Non-English', 75071, 'Tutorial,Entertainment', 'http://i.ytimg.com/vi/qaYrNNkeyq8/mqdefault.jpg', 'tai chi, interview, wu style', 'Wu Taichi'),
@@ -984,7 +985,7 @@ INSERT INTO `fun_video_all` (`id`, `title`, `videolink`, `videolength`, `highest
 (952, 'Wu Amin--Taichi Yang Style form 24 吴阿敏杨氏', 'http://www.youtube.com/watch?v=lEXuQnBjTlY', 125, '240', 'None', 'Non-English', 56110, 'Tutorial', 'http://i.ytimg.com/vi/lEXuQnBjTlY/mqdefault.jpg', 'Sports, yang style, 24 form', 'Yang Taichi'),
 (953, 'Two people mirror Tai Chi form 8', 'http://www.youtube.com/watch?v=lH4JZ6aqCbA', 4, '480', 'Two people mirror Tai Chi form 8', 'Non-English', 92453, 'Group demo', 'http://i.ytimg.com/vi/lH4JZ6aqCbA/mqdefault.jpg', 'yan style, group demo, tai chi', 'Yang Taichi'),
 (954, 'Yang Family tai chi push hands', 'http://www.youtube.com/watch?v=LiQu_EroF-k', 11, '480', 'Push Hands talk and demonstration from the Open House on 10/13/2007 of the Yang Chengfu Tai Chi Center Seattle. Featuring Master Yang Jun and Lance Lu. yangfamilytaichi.com Part 2 of 2.', 'Non-English', 65091, 'Tutorial,Group demo', 'http://i.ytimg.com/vi/LiQu_EroF-k/mqdefault.jpg', 'Tai Chi,Tutorial, Demo, push hand', 'Yang Taichi');
-INSERT INTO `fun_video_all` (`id`, `title`, `videolink`, `videolength`, `highestresolution`, `description`, `language`, `viewcount`, `videotype`, `iconimage`, `tag`, `category`) VALUES
+INSERT INTO `fun_video` (`id`, `title`, `videolink`, `videolength`, `highestresolution`, `description`, `language`, `viewcount`, `videotype`, `iconimage`, `tag`, `category`) VALUES
 (955, 'Yang Tai Chi for Beginners', 'http://www.youtube.com/watch?v=m4ccN_yYKlA', 11, '720', 'DVD available: http://ymaa.com/publishing/internal/t... This is a 11-minute clip from the DVD "Yang Tai Chi ro Beginners". It includes a section of the introduction, and a brief instructional segment.\r\n\r\nIn this five-hour DVD, Dr. Yang gives step-by-step instruction of the 108-movement Yang tai chi form, and explains the purpose of each movement. English subtitles.\r\n\r\nDVD available here:\r\nhttp://ymaa.com/publishing/internal/t...', 'English', 200132, 'Tutorial,Others', 'http://i.ytimg.com/vi/m4ccN_yYKlA/mqdefault.jpg', 'yan style, tai chi, beginner', 'Yang Taichi'),
 (956, 'Tai Chi Chuan stile Yang: la forma 10', 'http://www.youtube.com/watch?v=mfw7rKKY6TU', 3, '240', 'Tai Chi Chuan stile Yang: la forma 10.\r\n\r\nPer scaricare i video di Tai Chi:\r\nhttp://taiji.de/taiji/head4e/index.htm', 'Non-English', 266080, 'Tutorial,Application', 'http://i.ytimg.com/vi/mfw7rKKY6TU/mqdefault.jpg', 'yan style, demo, tutorial, tai chi', 'Yang Taichi'),
 (957, '8-form Tai Chi Demo (Back)', 'http://www.youtube.com/watch?v=MhWIIdVyWVs', 4, '360', '8-form Tai Chi Demo (Back)', 'English', 199075, 'Entertainment', 'http://i.ytimg.com/vi/MhWIIdVyWVs/mqdefault.jpg', 'yan style, tai chi, demo, music', 'Yang Taichi'),
@@ -997,25 +998,6 @@ INSERT INTO `fun_video_all` (`id`, `title`, `videolink`, `videolength`, `highest
 (966, 'Tai Chi Yang style 8-form.', 'http://www.youtube.com/watch?v=PWw-DAcSszM', 3, '240', 'Tai Chi Yang style 8-form (Chen Sitan).', 'Non-English', 250073, 'Tutorial', 'http://i.ytimg.com/vi/PWw-DAcSszM/mqdefault.jpg', 'yan style, tutorial, demo, tai chi', 'Yang Taichi'),
 (967, 'Part 4 Tai Chi: Learn it Here Free: Yang Cheng-fu ', 'http://www.youtube.com/watch?v=qrdoP3ax4Ng', 5, '240', 'To the untrained eye, Tai Chi Chuan seems too slow for combat. However, these soft movements conceal effective self-defense techniques', 'English', 74898, 'Tutorial,Entertainment,Application', 'http://i.ytimg.com/vi/qrdoP3ax4Ng/mqdefault.jpg', 'Tai Chi,Tutorial', 'Yang Taichi');
 
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `fun_video_all`
---
-ALTER TABLE `fun_video_all`
- ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `fun_video_all`
---
-ALTER TABLE `fun_video_all`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=968;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
