@@ -26,8 +26,15 @@
 
 			$_SESSION['favorites'] = $favorites;
 
-			$query = "UPDATE session SET favorites=\"$favorites\" WHERE email=\"$email\"";
-			mysqli_query($conn, $query);
+			if (count($array) == 0){
+				$query = "DELETE FROM session WHERE email=\"$email\"";
+				mysqli_query($conn,$query);
+			}
+			else {
+				$query = "UPDATE session SET favorites=\"$favorites\" WHERE email=\"$email\"";
+				mysqli_query($conn, $query);
+			}
+
 
 			echo "Successfully removed from wishlist";
 

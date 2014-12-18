@@ -10,6 +10,18 @@
 			CS174 - Group 1 - Home
 		</title>
 		
+		<script>
+			function removeFavorite(id) {
+				var confirm = window.confirm("Are you sure you want to remove this from favorites?");
+
+				if(confirm){
+					$.post("removefavorite.php", {videoid:id},function(data){
+						alert(data);
+						location.reload();
+					});
+				}
+			}
+		</script>
 		
 
 		<!-- Slideshow script -->
@@ -46,6 +58,24 @@
 			</table>
 		</div>
 
+		<h2>Browse by category</h2>
+		<form action='index.php' method='post'>
+			<select name='category'>
+				<option value='Tae kwon do'>Tae kwon do</option>;
+				<option value='Yang Taichi'>Yang Taichi</option>;
+				<option value='Chen Taichi'>Chen Taichi</option>;
+				<option value='Sun Taichi'>Sun Taichi</option>;
+				<option value='Wu Taichi'>Wu Taichi</option>;
+				<option value='Qi Gong'>Qi Gong</option>;
+				<option value='Shaolin'>Shaolin</option>;
+				<option value='Wing Chun'>Wing Chun</option>;
+				<option value='Aikido'>Aikido</option>;
+				<option value='Judo'>Judo</option>;
+				<option value='KungFu Movie'>KungFu Movie</option>;
+			</select>
+			<input type='submit' value='Browse'>
+		</form>
+
 		<?php
 			include 'list.php';
 			if(isset($_COOKIE['loggedIn']))
@@ -66,6 +96,7 @@
 								<th>Video type</th>
 								<th>Category</th>
 								<th>Tags</th>
+								<th>Remove</th>
 							</tr>
 						</thead>
 						
@@ -124,6 +155,8 @@
 
 						// Video's Tags
 						echo "<td>".$tags."</td>";
+
+						echo "<td><button type='button' onclick='removeFavorite($videoid)' class='favbutton'>Remove from favorites</button>";
 
 						// End of row
 						echo "</tr>";

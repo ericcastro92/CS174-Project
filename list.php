@@ -85,7 +85,16 @@
 		
 		<tbody>
 			<?php 
-			$data = mysqli_query($conn, "SELECT * FROM fun_video") or die(mysql_error());
+				$data;
+
+				if ($_POST) {
+					$category = $_POST["category"];
+					$data = mysqli_query($conn, "SELECT * FROM fun_video WHERE category='$category'") or die(mysql_error());
+				}
+				else {
+					$data = mysqli_query($conn, "SELECT * FROM fun_video") or die(mysql_error());
+				}
+
 			
 			while ($info = mysqli_fetch_array($data)) {
 				$videoid=$info["id"];
